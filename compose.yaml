@@ -1,0 +1,11 @@
+services:
+  jev-gateway:
+    build: .
+    environment:
+      AI_GATEWAY_API_KEY: ${AI_GATEWAY_API_KEY:-}
+    ports:
+      - "127.0.0.1:8787:8787"
+
+networks:
+  default:
+    name: jev-gateway
