@@ -1,0 +1,6 @@
+# Implementation Log
+
+- 2026-09-18: Created a standalone Node 22 / AI SDK 7 Jev gateway on an uncommitted feature branch. It exposes `GET /health` and `POST /v1/evaluate`, holds the Vercel key server-side, validates request shape, and binds its host port to loopback. Added Docker Compose, an external Docker network path for other projects, and HTTP contract tests.
+- 2026-09-18: Ran three HTTP contract tests in Docker and made a live request through the Docker network. Health returned 200; Jev evaluation returned 200 with a real Boolean probability and Vercel metadata showing TypeSafe AI as the provider. Added an MIT license and kept the key in a gitignored local `.env`.
+- 2026-09-18: Rebuilt the service and verified Boolean, Choice, and Score questions together in one live Jev request. All three returned typed answers with HTTP 200. The service remains running locally for reuse; no files were committed or pushed.
+- 2026-09-18: Renamed the project directory to `jev-gateway`, recreated the Docker Compose service under the new project name, and verified all three tests and a live Jev call again. Confirmed `.env` and `node_modules` are ignored, no old path references remain, and the repository still has no commits or remote.
